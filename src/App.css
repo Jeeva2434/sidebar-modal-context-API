@@ -1,38 +1,100 @@
-.App {
-  text-align: center;
+.home{
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.sideBar_btn{
+    position: fixed;
+    left: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(146, 146, 235);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.modalContainer{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    z-index: -1;
+    visibility: hidden;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.showModal{
+    z-index: 2;
+    visibility: visible;
 }
-
-.App-link {
-  color: #61dafb;
+.modalContent{
+    position: relative;
+    width: 50vw;
+    height: 30vh;
+    background: rgb(224, 237, 235);
+    display: flex;
+    justify-content: center;
+    border: 2px solid blue;
+    border-radius: 8px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modalClose,.sideBarClose{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: transparent;
+    background: transparent;
+    color: red;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.sideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    width: max-content;
+    height: 100%;
+    background-color: rgba(255, 255, 255);
+    padding: 10px 20px;
+    width: 300px;
+    box-shadow: 2px 0 2px rgba(0,0,0,0.2);
+}
+.sideBarOpen{
+    transform: translateX(0%);
+}
+.sidebarContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.sideBarClose{
+    top:1.5rem;
+}
+h3{
+    font-weight: 500;
+    font-family: 'Roboto';
+    letter-spacing: 2px;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.link_list{
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+.link_item{
+    /* background-color: aliceblue; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 400;
+    color: rgb(122, 122, 186);
+    cursor: pointer;
+    border-radius: 8px;
+}
+.link_item:hover{
+   background-color: rgba(206, 206, 206, 0.2);
 }
